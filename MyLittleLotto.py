@@ -8,8 +8,14 @@ print ('Your job in this game is to go through six rounds of guessing the')
 print ('correct number(1-20). You will have four chances to get the number correct.')
 print ('Complete all six rounds and win!')
 print ()
+#Pull a random number into a variable
+import random
+random_num = random.randint(1,5)
 #Start guessing prompt
 while True:
     guess = input('Please enter a number between 1-20: ')
-    if int(guess) < 1 or int(guess) > 20:
-        print ('Invalid number - not between 1-20. Try again!')
+    if int(guess) == random_num:
+        guessed_correct = True
+        print ('You guessed correctly')
+        if guessed_correct == True:
+            random_num = random.randint(1,5)
